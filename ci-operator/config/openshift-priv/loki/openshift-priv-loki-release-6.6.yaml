@@ -1,12 +1,12 @@
 base_images:
   base:
-    name: 4.21-priv
+    name: 4.22-priv
     namespace: ocp-private
     tag: base-rhel9
   loki:
     name: loki
     namespace: logging
-    tag: v3.6.5
+    tag: v3.7.3
   lokistack-gateway:
     name: lokistack-gateway
     namespace: logging
@@ -55,7 +55,7 @@ promotion:
   - additional_images:
       loki-operator-bundle: loki-operator-bundle
     disabled: true
-    name: "6.5"
+    name: "6.6"
     namespace: logging
 prowgen:
   private: true
@@ -63,7 +63,7 @@ releases:
   latest:
     release:
       channel: stable
-      version: "4.21"
+      version: "4.22"
 resources:
   '*':
     requests:
@@ -150,6 +150,6 @@ tests:
           cpu: 100m
     workflow: optional-operators-ci-generic-claim
 zz_generated_metadata:
-  branch: release-6.5
+  branch: release-6.6
   org: openshift-priv
   repo: loki
